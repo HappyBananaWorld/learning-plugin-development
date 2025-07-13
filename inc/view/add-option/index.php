@@ -60,19 +60,13 @@
             <tbody>
                 <?php
                 // Sample static table for demo
-                global $wpdb;
 
-                $results = $wpdb->get_results("
-                    SELECT option_name, option_value
-                    FROM {$wpdb->options}
-                    WHERE option_name LIKE '_lr_%'
-                    ORDER BY option_name ASC
-                ");
+                $results =Option::where('option_name', 'like', '_lr_%')->get()->toArray();
 
                 foreach ($results as $row) {
                     echo '<tr>';
-                    echo '<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">' . esc_html($row->option_name) . '</td>';
-                    echo '<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">' . esc_html($row->option_value) . '</td>';
+                    echo '<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">' . esc_html($row['option_name']) . '</td>';
+                    echo '<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">' . esc_html($row['option_value']) . '</td>';
                     echo '</tr>';
                 }
                 ?>

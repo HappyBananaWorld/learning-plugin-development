@@ -19,7 +19,10 @@ define('LR_PLUGIN_INC', LR_PLUGIN_DIR . "inc/");
 define('LR_PLUGIN_ASSETS', LR_PLUGIN_DIR . "assets/");
 
 // import helper
+require_once LR_PLUGIN_DIR . 'vendor/autoload.php';
 require_once LR_PLUGIN_INC . "helpers/helper.php";
+require_once LR_PLUGIN_INC . "db/connection.php";
+require_once LR_PLUGIN_INC . "models/Option.php";
 
 if (is_admin()) {
     include LR_PLUGIN_INC . "admin/menu.php";

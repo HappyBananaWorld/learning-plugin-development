@@ -1,0 +1,17 @@
+{
+    "name": "asaidea.ir/learning",
+    "autoload": {
+        "psr-4": {
+            "AsaideaIr\\Learning\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mr Banana",
+            "email": "sajad.dev.personal@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^12.2"
+    }
+}
