@@ -31,5 +31,22 @@ function lr_dashboard_page()
 
 function lr_add_option_page()
 {
+    if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+        lr_add_option($_POST);
+    }
+
     lr_include('view/add-option/index.php');
+}
+
+function lr_add_option($data)
+{
+    $key = "_lr_" . $data['key'];
+    $value = $data['value'];
+
+    if (get_option($key)) {
+        update_option($key, $value);
+        return;
+    }
+
+    add_option($key, $value);
 }
