@@ -31,5 +31,5 @@ function lr_dashboard_page()
 
 function lr_add_option_page()
 {
-    echo "hello";
+    lr_include('view/add-option/index.php');
 }
